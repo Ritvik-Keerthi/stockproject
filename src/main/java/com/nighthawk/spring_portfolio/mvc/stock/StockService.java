@@ -23,4 +23,18 @@ public class StockService {
         return stockRepository.findById(id).orElseThrow(() -> new RuntimeException("Stock not found"));
     }
 
+    public Stock createStock(Stock stock) {
+        return stockRepository.save(stock);
+    }
+
+    public Stock updateStock(Long id, Stock stock) {
+        Stock existingStock = getStockById(id);
+        existingStock.setName(stock.getName());
+        existingStock.setPrice(stock.getPrice());
+        return stockRepository.save(existingStock);
+    }
+
+    public void deleteStock(Long id) {
+        stockRepository.deleteById(id);
+    }
 }
