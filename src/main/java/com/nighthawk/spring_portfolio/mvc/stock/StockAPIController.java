@@ -41,6 +41,10 @@ public class StockAPIController {
         return ResponseEntity.ok(stockService.updateStock(id, stock));
     }
 
-
+    // Delete a Stock
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteStock(@PathVariable("id") Long id) {
+        stockService.deleteStock(id);
+        return ResponseEntity.ok().build();
     }
 }
