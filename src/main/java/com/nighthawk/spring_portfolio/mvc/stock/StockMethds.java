@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "stocks")
-public class StockMethods {
+public class Stock {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,3 +37,6 @@ public class StockMethods {
     public String getName() {
         return name;
     }
+
+    }
+}
