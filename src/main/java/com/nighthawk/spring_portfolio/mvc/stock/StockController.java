@@ -28,7 +28,7 @@ public class StockController {
 
     // Update price of a stock
     @PostMapping("/updatePrice/{symbol}/{newPrice}")
-    public ResponseEntity<Stock> updatePrice(@PathVariable String symbol, @PathVariable double newPrice) {
+    public ResponseEntity<Stock> updatePrice(@PathVariable String symbol, @PathVariable float newPrice) {
         Optional<Stock> optional = repository.findBySymbol(symbol);
         if (optional.isPresent()) {  // Symbol found
             Stock stock = optional.get();

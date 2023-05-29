@@ -33,6 +33,10 @@ public class Stock {
 
         return new Stock[]{s1, s2};
     }
+
+    public void setPrice(float newPrice) {
+        companyPrice = newPrice;
+    }
 }
 
 
