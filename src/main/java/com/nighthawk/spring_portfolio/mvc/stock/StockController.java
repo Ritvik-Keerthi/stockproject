@@ -1,10 +1,12 @@
 package com.nighthawk.spring_portfolio.mvc.stock;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -13,6 +15,12 @@ public class StockController {
 
     @Autowired
     private StockJpaRepository repository;
+
+    @GetMapping("/")
+    public ResponseEntity<List<Stock>> getStocks() {
+        // ResponseEntity returns List of Stocks provide by JPA findAll()
+        return new ResponseEntity<>( repository.findAll(), HttpStatus.OK);
+    }
 
     // Get current price of a stock
     @GetMapping("/currentPrice/{symbol}")
