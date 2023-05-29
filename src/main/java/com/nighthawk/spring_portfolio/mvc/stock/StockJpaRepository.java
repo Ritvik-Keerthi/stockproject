@@ -10,5 +10,6 @@ public interface StockJpaRepository extends JpaRepository<Stock, Long> {
     Optional<Stock> findBySymbol(String symbol);
     // JPA has many built in methods, these few have been prototyped for this application
 
+    List<Stock> findAll();
 
 }
