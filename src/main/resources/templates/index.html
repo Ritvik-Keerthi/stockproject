@@ -1,99 +1,19 @@
+<!-- This page is illustrative and contains ideas about HTML formatting -->
 <!DOCTYPE HTML>
-<html lang="en">
+<!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layouts/base}" lang="en">
 
 <head>
-    <title>Welcome to our Stock Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        h1 {
-            color: #333;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .stock-images {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
-        }
-
-        .stock-image {
-            width: 30%;
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .stock-image img {
-            width: 100%;
-            height: auto;
-        }
-
-        .stock-info {
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
-
-        .stock-info h2 {
-            color: #333;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-
-        .stock-info p {
-            margin-bottom: 15px;
-        }
-
-        .stock-info p:last-child {
-            margin-bottom: 0;
-        }
-    </style>
+    <title>Intro</title>
 </head>
 
 <body>
-<div class="container">
-    <h1>Welcome to our Stock Website</h1>
+<th:block layout:fragment="body" th:remove="tag">
+    <!-- Start of body content specific to page -->
 
-    <div class="stock-images">
-        <div class="stock-image">
-            <img src="https://caltech-prod.s3.amazonaws.com/main/images/CollinCamerer-ShortSelling-0.2e16d0ba.fill-1600x810-c100.jpg" alt="Stock Image 1">
-        </div>
-        <div class="stock-image">
-            <img src="https://cdn.corporatefinanceinstitute.com/assets/stock.jpg" alt="Stock Image 2">
-        </div>
-        <div class="stock-image">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDuTXS3HDwvWa1WsXIELDZ53x9i0uPI7tEjQ&usqp=CAU" alt="Stock Image 3">
-        </div>
-    </div>
+    <!-- End of body content specific to page -->
+</th:block>
+</body>
 
-    <div class="stock-info">
-        <h2>What are Stocks?</h2>
-        <p>Stocks are shares of ownership in a company. When you buy a stock, you become a partial owner of the company and have the potential to profit if the company's value increases.</p>
-        <p>Stocks are bought and sold on stock exchanges, and their prices can fluctuate based on various factors such as the company's financial performance, market conditions, and investor sentiment.</p>
-        <p>Investing in stocks can be a way to grow your wealth over time, but it's important to research and understand the risks associated with investing in the stock market.</p>
-
-        <h2>Why Invest in Stocks?</h2>
-        <p>Investing in stocks offers several potential advantages:</p>
-        <ul>
-            <li>Potential for higher returns compared to other investment options</li>
-            <li>Opportunity to participate in the growth of successful companies</li>
-            <li>Ability to diversify your investment portfolio</li>
-            <li>Possibility of earning dividends from profitable companies</li>
-            <li>Liquidity, as stocks can be easily bought and sold on stock exchanges</li>
-        </ul>
-
-
+</html>
