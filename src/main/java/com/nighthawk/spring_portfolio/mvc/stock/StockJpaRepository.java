@@ -12,4 +12,5 @@ public interface StockJpaRepository extends JpaRepository<Stock, Long> {
 
     List<Stock> findAll();
 
+
 }

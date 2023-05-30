@@ -1,5 +1,6 @@
 package com.nighthawk.spring_portfolio.mvc.stock;
 
+import com.nighthawk.spring_portfolio.mvc.person.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,5 +25,47 @@ public class StockViewController {
         model.addAttribute("list", list);
         return "stock/read";
     }
+
+    @GetMapping("/delete/{id}")
+    public String StockDelete(@PathVariable("id") long id) {
+        repository.deleteById(id);
+        return "redirect:/mvc/stock/read";
+    }
+
+    //make a controller method for an update to refresh the prices on the table
+
+
+
+    @PostMapping("/simulate")
+    public String simulate(Model model, @RequestParam(name="symbol1", required=false, defaultValue="AMZN") String symbol1,
+                           @RequestParam(name="buyPrice1", required=false, defaultValue="34") float buyPrice1,
+                           @RequestParam(name="quantity1", required=false, defaultValue="100") String quantity1) {
+
+        //Lookup the current price of the 3 symbols in the database
+
+       // float currentPrice = stockService.getCurrentPrice(symbol1);
+
+        //Calculate profit/loss based on buyPrice, current price, and quantity
+      //  float profitLoss = (currentPrice - buyPrice1) * quantity1;
+
+        //Save the profit/loss amounts to the model, so it goes to the html
+       // model.addAttribute("profitLoss", profitLoss);
+
+        //Calculate profit/loss based on buyPrice, current price, and quantity
+
+        //Save the profit/loss amounts to the model, so it goes to the html
+        // e.g. model.addAttribute("profit1", profit1);
+
+        return "stock/simulate";
+    }
+
+    @GetMapping("/simulate")
+    public String simulateProcess() {
+        return "stock/simulate";
+    }
+
+
+
+
 
 }
