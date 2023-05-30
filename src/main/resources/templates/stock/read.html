@@ -5,7 +5,7 @@
       layout:decorate="~{layouts/base}" lang="en">
 
 <head>    <!-- Page specific head additions -->
-    <title>Person List</title>
+    <title>Stock List</title>
 </head>
 
 <!-- <body> -->
@@ -15,36 +15,36 @@
         <!-- Page specific body additions -->
         <header class="pb-3 mb-4 border-bottom">
             <a href="#" class="d-flex align-items-center text-light text-decoration-none">
-                <span class="fs-4">Database SQL Person</span>
+                <span class="fs-4">Database SQL Stock</span>
             </a>
         </header>
 
         <div class="container py-4 text-light bg-success">
 
             <h2>Person Viewer</h2>
-            <a th:href="@{/mvc/person/create/}">Create Person</a>
+            <a th:href="@{/mvc/stock/create/}">Create Stock</a>
             <div class="row align-items-md-stretch">
                 <table class="table">
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>User ID</th>
-                        <th>Person</th>
-                        <th>Age</th>
+                        <th>Company Price</th>
+                        <th>Company Name</th>
+                        <th>Symbol</th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="person : ${list}">
-                        <td th:text="${person.id}">Person ID</td>
-                        <td th:text="${person.email}">Birth Date</td>
-                        <td th:text="${person.name}">Name</td>
-                        <td th:if="${person.getAge() != -1}" th:text="${person.getAge()}">Age</td>
-                        <td th:unless="${person.getAge() != -1}" th:text="Unknown">Unknown Age</td>
+                    <tr th:each="stock : ${list}">
+                        <td th:text="${stock.id}">Person ID</td>
+                        <td th:text="${stock.company_price}">Company Price</td>
+                        <td th:text="${stock.company_name}">Company Name</td>
+                        <td th:text="${stock.symbol}"> Symbol</td>
+
                         <td>
                             <!--- <a th:href="@{/mvc/notes/{id}(id = ${person.id})}">Notes</a> -->
-                            <a th:href="@{/mvc/person/update/{id}(id = ${person.id})}">Update</a>
-                            <a th:href="@{/mvc/person/delete/{id}(id = ${person.id})}">Delete</a>
+                            <a th:href="@{/mvc/stock/update/{id}(id = ${stock.id})}">Update</a>
+                            <a th:href="@{/mvc/stock/delete/{id}(id = ${stock.id})}">Delete</a>
                         </td>
                     </tr>
                     </tbody>
