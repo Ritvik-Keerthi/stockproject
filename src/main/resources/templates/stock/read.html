@@ -21,8 +21,7 @@
 
         <div class="container py-4 text-light bg-success">
 
-            <h2>Person Viewer</h2>
-            <a th:href="@{/mvc/stock/create/}">Create Stock</a>
+
             <div class="row align-items-md-stretch">
                 <table class="table">
                     <thead>
@@ -37,14 +36,12 @@
                     <tbody>
                     <tr th:each="stock : ${list}">
                         <td th:text="${stock.id}">Person ID</td>
-                        <td th:text="${stock.company_price}">Company Price</td>
-                        <td th:text="${stock.company_name}">Company Name</td>
+                        <td th:text="${stock.companyPrice}">Company Price</td>
+                        <td th:text="${stock.companyName}">Company Name</td>
                         <td th:text="${stock.symbol}"> Symbol</td>
 
                         <td>
                             <!--- <a th:href="@{/mvc/notes/{id}(id = ${person.id})}">Notes</a> -->
-                            <a th:href="@{/mvc/stock/update/{id}(id = ${stock.id})}">Update</a>
-                            <a th:href="@{/mvc/stock/delete/{id}(id = ${stock.id})}">Delete</a>
                         </td>
                     </tr>
                     </tbody>
